@@ -1,0 +1,148 @@
+@column-count: 4;
+
+@pic-size: 100% / @column-count;
+@works-gap: 3%; // column gap
+@works-row-gap: 3%;
+@list-width: 100% - @works-gap * 5;
+@list-margin: @works-gap * 5 / 2;
+@list-padding: 2%;
+
+@primary-color: #124232;
+@text-title: 1.3rem;
+@text-date: 1rem;
+@text-tag: 1rem;
+@text-icon: 1rem;
+@text-opt: 1rem;
+
+@opt-offset: -3rem;
+
+@primary-color: #5B81F4;
+@text-color: gray;
+@line-color: #ccc;
+
+
+.work {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border: @line-color solid 1px;
+  box-shadow: 0 0 10px @line-color;
+
+  .opt-help1 {
+    float: right;
+    margin-top: 15%;
+
+    .opt-help2 {
+      position: absolute;
+    }
+  }
+
+  .opt {
+    position: relative;
+    left: 0;
+    font-size: @text-opt;
+    transition: left 0.3s;
+
+    * {
+      display: block;
+    }
+
+    .opt-btn {
+      color: white;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .line {
+      width: 100%;
+      height: 2px;
+      margin: 5px 0;
+      background-color: white;
+    }
+  }
+
+  &:hover .opt {
+    left: @opt-offset;
+  }
+
+  .pic {
+    width: 100%;
+  }
+
+  .info {
+    padding: 10px;
+
+    .info-top {
+      margin: 10px 0;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: @text-title;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .info-tag {
+      display: inline-block;
+      padding: 1px 10px;
+      color: @primary-color;
+      background-color: white;
+      border: @primary-color solid 1px;
+      border-radius: 20px;
+    }
+
+    .info-tag-empty {
+      display: inline-block;
+    }
+
+    .info-mid {
+      margin: 10px 0;
+      color: @text-color;
+      font-size: @text-icon;
+
+      >div {
+        margin-right: 20px;
+      }
+
+      * {
+        display: inline-block;
+      }
+
+      .info-count {
+        margin-left: 5px;
+      }
+    }
+
+    .info-bottom {
+      .line {
+        width: 94%;
+        height: 2px;
+        margin-left: 3%;
+        background-color: @line-color;
+      }
+
+      .info-date {
+        display: inline-block;
+        padding: 10px 0;
+        color: @text-color;
+      }
+
+      .info-bottom-right {
+        float: right;
+        padding: 10px 0;
+      }
+    }
+
+    .info-icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+
+      &:hover {
+        color: @primary-color;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
